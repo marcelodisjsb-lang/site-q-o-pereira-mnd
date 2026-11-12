@@ -10,7 +10,7 @@
 <body>
 
     <main>
-        <section id="primeira">
+        <section id="primeira" class="mostrar">
             <h1>clique aq</h1>
             <button onclick="avancar()">Clique aqui</button>
         </section>
@@ -22,8 +22,18 @@
 
     <script>
         function avancar() {
-            document.getElementById("primeira").classList.add("escondida");
-            document.getElementById("segunda").classList.remove("escondida");
+            const primeira = document.getElementById("primeira");
+            const segunda = document.getElementById("segunda");
+
+            primeira.classList.add("saindo");
+
+            setTimeout(() => {
+                primeira.classList.add("escondida");
+                primeira.classList.remove("saindo");
+
+                segunda.classList.remove("escondida");
+                segunda.classList.add("mostrar");
+            }, 500);
         }
     </script>
 
