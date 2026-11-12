@@ -5,15 +5,10 @@
     box-sizing: border-box;
 }
 
-html, body {
-    width: 100%;
-    min-height: 100%;
-    background-color: #ffffff;
-}
-
 body {
-    font-family: Arial, sans-serif;
+    background: #ffffff;
     color: #000000;
+    font-family: Arial, sans-serif;
 }
 
 main {
@@ -23,32 +18,60 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #ffffff;
 }
 
 h1 {
-    color: #000000;
-    font-size: 48px;
+    font-size: 55px;
     margin-bottom: 30px;
+    color: #000000;
 }
 
 button {
-    background-color: #000000;
+    background: #000000;
     color: #ffffff;
     border: 2px solid #000000;
     padding: 15px 35px;
     font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    background-color: #ffffff;
+    background: #ffffff;
     color: #000000;
+    transform: scale(1.1);
 }
 
 .escondida {
     display: none;
+}
+
+/* Animação de entrada */
+.mostrar {
+    animation: entrada 0.8s ease forwards;
+}
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: scale(0.5) translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Animação de saída */
+.saindo {
+    animation: saida 0.5s ease forwards;
+}
+
+@keyframes saida {
+    to {
+        opacity: 0;
+        transform: scale(1.3);
+    }
 }
